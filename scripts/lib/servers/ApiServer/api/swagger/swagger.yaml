@@ -1,0 +1,274 @@
+swagger: "2.0"
+info:
+  version: "1.0.0"
+  title: Recipes API
+host: localhost:8081
+basePath: /
+consumes:
+  - application/json
+produces:
+  - application/json
+paths:
+  /recipes:
+    x-swagger-router-controller: recipes
+    get:
+      operationId: list
+      description: Returns a list of 'Recipes' to the caller
+      tags:
+        - recipes
+      parameters:
+        - name: search
+          in: query
+          description: Full text search term
+          required: false
+          type: string
+        - name: page
+          in: query
+          description: The page of the list
+          required: false
+          type: number
+          default: 1
+          minimum: 1
+        - name: pageSize
+          in: query
+          description: The page size of the lst
+          required: false
+          type: number
+          default: 5
+          minimum: 5
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: "#/definitions/RecipeList"
+        '400':
+          description: Bad Request
+          schema:
+            $ref: "#/definitions/Error"
+        default:
+          description: Error
+          schema:
+            $ref: "#/definitions/Error"
+    post:
+      operationId: add
+      description: Adds a recipe
+      tags:
+        - recipes
+      parameters:
+        - name: body
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/RecipePostPayload'
+      responses:
+        '201':
+          description: Created
+          schema:
+            $ref: "#/definitions/Recipe"
+        '400':
+          description: Bad Request
+          schema:
+            $ref: "#/definitions/Error"
+        default:
+          description: Error
+          schema:
+            $ref: "#/definitions/Error"
+          
+  /recipes/{id}:
+    x-swagger-router-controller: recipes
+    get:
+      operationId: get
+      description: Returns a single 'Recipe' to the caller
+      tags:
+        - recipes
+      parameters:
+        - name: id
+          in: path
+          description: Id of the recipe
+          required: true
+          type: number
+          minimum: 0
+      responses:
+        "200":
+          description: Success
+          schema:
+            $ref: "#/definitions/Recipe"
+        '400':
+          description: Bad Request
+          schema:
+            $ref: "#/definitions/Error"
+        '404':
+          description: Not found
+          schema:
+            $ref: "#/definitions/Error"
+        default:
+          description: Error
+          schema:
+            $ref: "#/definitions/Error"
+    put:
+      operationId: update
+      description: Updates an existing recipe
+      tags:
+        - recipes
+      parameters:
+        - name: id
+          in: path
+          description: Id of the recipe
+          required: true
+          type: number
+          minimum: 0
+        - name: body
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/RecipePutPayload'
+      responses:
+        '200':
+          description: Updated
+          schema:
+            $ref: "#/definitions/Recipe"
+        '400':
+          description: Bad Request
+          schema:
+            $ref: "#/definitions/Error"
+        '404':
+          description: Not found
+          schema:
+            $ref: "#/definitions/Error"
+        default:
+          description: Error
+          schema:
+            $ref: "#/definitions/Error"
+    delete:
+      operationId: delete
+      description: Deletes an existing recipe
+      tags:
+        - recipes
+      parameters:
+        - name: id
+          in: path
+          description: Id of the recipe
+          required: true
+          type: number
+          minimum: 0
+      responses:
+        '200':
+          description: Deleted
+          schema:
+            $ref: "#/definitions/Recipe"
+        '400':
+          description: Bad Request
+          schema:
+            $ref: "#/definitions/Error"
+        '404':
+          description: Not found
+          schema:
+            $ref: "#/definitions/Error"
+        default:
+          description: Error
+          schema:
+            $ref: "#/definitions/Error"
+    
+  /swagger:
+    x-swagger-pipe: swagger_raw
+
+definitions:
+  Ingredient:
+    required:
+      - name
+    properties:
+      name:
+        type: string
+      amount:
+        type: number
+        minimum: 0.1
+        default: 1
+      unit:
+        type: string
+        enum:
+          - g
+          - kg
+          - ml
+          - cl
+          - dl
+          - l
+          - cup
+          - tablespoon
+          - teaspoon
+          - pinch
+          - oz
+          - lbs
+          - floz
+  IngredientList:
+    type: array
+    items:
+      $ref: "#/definitions/Ingredient"
+  Recipe:
+    required:
+      - id
+      - title
+      - description
+      - created
+      - modified
+      - ingredients
+    properties:
+      id:
+        type: number
+      title:
+        type: string
+      description:
+        type: string
+      created:
+        type: string
+        format: date-time
+      modified:
+        type: string
+        format: date-time
+      ingredients:
+        $ref: "#/definitions/IngredientList"
+  RecipeList:
+    required:
+      - currentPage
+      - totalPages
+      - recipes
+    properties:
+      currentPage:
+        type: number
+        minimum: 1
+      totalPages:
+        type: number
+        minimum: 1
+      recipes:
+        type: array
+        items:
+          $ref: "#/definitions/Recipe"
+  RecipePostPayload:
+    required:
+      - title
+      - ingredients
+      - description
+    properties:
+      title:
+        type: string
+      description:
+        type: string
+      ingredients:
+        $ref: "#/definitions/IngredientList"
+  RecipePutPayload:
+    properties:
+      title:
+        type: string
+      description:
+        type: string
+      ingredients:
+        $ref: "#/definitions/IngredientList"
+  Error:
+    required:
+      - message
+    properties:
+      message:
+        type: string
+      errors:
+        type: array
+        items:
+          type: object

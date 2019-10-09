@@ -1,0 +1,57 @@
+{
+  "name": "frontend-challenge",
+  "version": "1.0.0",
+  "description": "Frontend challenge for candidates",
+  "author": "",
+  "main": "scripts/start.js",
+  "scripts": {
+    "client": "react-scripts start",
+    "server": "nodemon --ignore scripts/lib/servers/ApiServer/api/Storage/stores/recipes.json",
+    "start": "concurrently \"npm run server\" \"npm run client\"",
+    "swagger-edit": "swagger_swagger_fileName=scripts/lib/servers/ApiServer/api/swagger/swagger.yaml swagger project edit",
+    "reset": "node scripts/lib/servers/ApiServer/reset-store.js",
+    "docker:start": "./scripts/docker-start.sh",
+    "docker:shell": "./scripts/docker-shell.sh",
+    "test": "react-scripts test --env=jsdom"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Scout24-CH/frontend-challenge.git"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^2.4.2",
+    "concurrently": "^5.0.0",
+    "cors": "^2.8.5",
+    "data-store": "^3.1.0",
+    "enzyme": "3.10.0",
+    "enzyme-adapter-react-16": "^1.14.0",
+    "express": "^4.17.1",
+    "fs-extra": "^8.0.1",
+    "js-yaml": "^3.13.1",
+    "morgan": "^1.9.1",
+    "react": "16.8.6",
+    "react-dom": "16.8.6",
+    "react-redux": "^7.1.1",
+    "react-scripts": "3.0.1",
+    "redux": "^4.0.4",
+    "swagger-express-mw": "^0.7.0",
+    "swagger-ui-express": "^4.0.6"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.1",
+    "typescript": "3.3.3"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
