@@ -1,4 +1,4 @@
-# Scout24 frontend challenge
+# Frontend challenge
 Allong with the link to this repository, you got also an appointment timeframe, when the challenge happens.
 
 ## Preparation
