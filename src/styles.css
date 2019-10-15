@@ -2,11 +2,6 @@
   font-family: sans-serif;
 }
 
-.done {
-  color: green;
-  text-decoration: line-through;
-}
-
 .items {
   margin: 24px 0;
 }
@@ -28,12 +23,19 @@
   margin: 100px auto;
 }
 
-.desc {
+.item-desc {
   width: 100%;
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
 }
+
+.item-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 
 .item {
   border: 1px solid;
@@ -87,9 +89,4 @@ button {
   background-image: linear-gradient(#d74736, #ad2719);
 }
 
-.header-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
 

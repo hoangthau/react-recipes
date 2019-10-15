@@ -5,13 +5,13 @@ import { createStore } from 'redux';
 
 import './styles.css';
 
-import RecipeContainer from './components/RecipeContainer';
-import { reducersRecipes } from './reducers/recipe';
+import RecipesOverview from './components/RecipesOverview';
+import { recipesReducers } from './reducers/recipes';
 
-const store = createStore(reducersRecipes);
+const store = createStore(recipesReducers);
 
 const App = () => {
-  return <RecipeContainer />;
+  return <RecipesOverview />;
 };
 
 const render = () => {
