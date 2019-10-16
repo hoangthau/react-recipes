@@ -8,6 +8,9 @@ import './styles.css';
 import RecipesOverview from './components/RecipesOverview';
 import { recipesReducers } from './reducers/recipes';
 
+//This is just a demo for Redux. For this case I think we don't need Redux.
+//But if we want to use recipes list in others components rather than RecipesOverview component, 
+//we can embrace Redux like that.
 const store = createStore(recipesReducers);
 
 const App = () => {

@@ -1176,65 +1176,6 @@
     "created": "2018-11-12T12:51:55.533Z",
     "modified": "2018-11-12T12:51:55.533Z"
   },
-  "22": {
-    "title": "Sfouggato",
-    "description": "A lebanese delicacy that is super easy to make and can be eaten hot or cold.\n\nAdd a lot of salt to the grated zucchini and squeeze well with a towel or cheesecloth to remove moisture.\n\nBeat the eggs in a bowl and set aside.\n\nIn a large bowl, mix the zucchini, parsley, dill, onion, spring onion, cheeses, pepper, eggs.\n\nAdd the olive oil to the mix.\n\nSpread on a deep, oiled baking tray and bake at 180-200C (350-390F) for about 40 minutes or until golden.\n\n- Graviera is a Greek hard light yellow cheese. Can’t find graviera? Use any yellow cheese that melts. The sfouggato in this photo was actually made with cheddar!\n- Don’t have all the ingredients? Worry not! This is a dish with many variations. Most of the ingredients are optional. What is absolutely mandatory is the eggs, zucchinis, some herbs (parsley, dill, and/or mint), some kind of cheese, and some kind of onion (only red onion or only spring onion is ok).",
-    "ingredients": [
-      {
-        "name": "eggs",
-        "amount": 7
-      },
-      {
-        "name": "zucchini grated",
-        "amount": 6
-      },
-      {
-        "name": "parsley finely chopped",
-        "amount": 0.5
-      },
-      {
-        "name": "dill finely chopped",
-        "amount": 0.5
-      },
-      {
-        "name": "dried mint",
-        "amount": 1,
-        "unit": "teaspoon"
-      },
-      {
-        "name": "graviera grated",
-        "amount": 0.5,
-        "unit": "cup"
-      },
-      {
-        "name": "feta crumbled",
-        "amount": 0.5,
-        "unit": "cup"
-      },
-      {
-        "name": "red onion finely chopped",
-        "amount": 1
-      },
-      {
-        "name": "spring onion finely chopped",
-        "amount": 1
-      },
-      {
-        "name": "olive oil",
-        "amount": 0.5,
-        "unit": "cup"
-      },
-      {
-        "name": "salt"
-      },
-      {
-        "name": "pepper"
-      }
-    ],
-    "id": "22",
-    "created": "2018-11-12T12:52:20.641Z",
-    "modified": "2018-11-12T12:52:20.641Z"
-  },
   "23": {
     "title": "Khoresht Karafs",
     "description": "A delicious Persian stew with beef and celery.\n\nWash the mint and parsley and make sure they are *completely dry*. A salad spinner helps, if you don’t have one you can use paper towels.\n\nFinely chop the mint and parsley, then sauté until just starting to turn crispy. Set aside.\n\nSauté the onion with enough butter or oil until golden\n\nAdd the garlic and sauté for 1-2 more minutes\n\nAdd the turmeric and sauté for 2 more minutes\n\nAdd the beef cubes and sauté until browned on the outside\n\nPour in the beef stock and sautéed mint and parsley and simmer\n\nIn a separate pan, sauté the celery until *just* starting to turn brown. Set aside.\n\nAfter the stew has been simmering for 1.5 hour, pour in the sautéed celery and simmer for another 30 minutes. This is done so that the celery doesn’t become too mushy.\n\nFinish with the lemon juice and serve.",

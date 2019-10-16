@@ -20,12 +20,13 @@ const start = async () => {
   await new ApiServer({
     port: PORT_API,
     log: log.register('api', chalk.cyan, console.info)
-  })
-  await new WebServer({
-    port: PORT_WEB,
-    log: log.register('web', chalk.cyan, console.info),
-    webroot: config.webroot
-  })
+  });
+  console.log('[web] up and running. http://localhost:3000');
+  // await new WebServer({
+  //   port: PORT_WEB,
+  //   log: log.register('web', chalk.cyan, console.info),
+  //   webroot: config.webroot
+  // })
 }
 
 start()
